@@ -22,7 +22,7 @@ class Search extends Component {
         //do stuff to filter the list
         let new_list = [];
 
-        employees.map(employee => {
+        employees.filter(employee => {
             if(employee.name.includes(this.state.search)) {
                 new_list.push(employee);
             }
@@ -38,11 +38,12 @@ class Search extends Component {
             else if(employee.location.includes(this.state.search)) {
                 new_list.push(employee);
             }
-        })
+            return false;
+        });
 
         this.setState({
             employees: new_list
-        })
+        });
     }
 
     render() {
@@ -63,6 +64,8 @@ class Search extends Component {
                         id={employee.id}
                         key={employee.key}
                         name={employee.name}
+                        age={employee.age}
+                        email={employee.email}
                         image={employee.image}
                         occupation={employee.occupation}
                         location={employee.location}

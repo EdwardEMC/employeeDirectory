@@ -3,32 +3,24 @@ import "./style.css";
 
 function EmployeeCard(props) {
   return (
-    <div className="card">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
+    <div className="card mb-3">
+      <div className="row no-gutters">
+        <div className="col-md-2">
+          <img alt={props.name} src={props.thumbnail} />
+        </div>
+        <div className="col-md">
+          <div className="card-body">                        
+            <strong>Name:</strong> {props.name}         
+            <strong>&emsp;Age:</strong> {props.age}
+            <strong>&emsp;Email:</strong> {props.email}
+            <strong>&emsp;Occupation:</strong> {props.occupation}
+            <strong>&emsp;Location:</strong> {props.location}
+          </div>
+        </div>
+        <span onClick={() => props.openEmployee(props.id)} className="remove">
+          Explore
+        </span>
       </div>
-      <div className="content">
-        <ul>
-          <li>
-            <strong>Name:</strong> {props.name}
-          </li>
-          <li>
-            <strong>Age:</strong> {props.age}
-          </li>
-          <li>
-            <strong>Email:</strong> {props.email}
-          </li>
-          <li>
-            <strong>Occupation:</strong> {props.occupation}
-          </li>
-          <li>
-            <strong>Location:</strong> {props.location}
-          </li>
-        </ul>
-      </div>
-      {/* <span onClick={() => props.removeFriend(props.id)} className="remove">
-        𝘅
-      </span> */}
     </div>
   );
 }
