@@ -17,7 +17,7 @@ function EmployeeCard(props) {
             <strong>&emsp;Location:</strong> {props.location}
           </div>
         </div>
-        <span onClick={() => props.openEmployee(props.id)} className="remove">
+        <span onClick={() => props.openEmployee(props.id)} className="explore">
           Explore
         </span>
       </div>

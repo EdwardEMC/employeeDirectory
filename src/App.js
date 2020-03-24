@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Directory from "./pages/Directory";
 import Search from "./pages/Search";
+import Employee from "./pages/Employee";
 import NavTabs from "./components/utils/NavTabs";
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
         <NavTabs />
         <Route exact path="/" component={Directory} />
         <Route path="/search" component={Search} />
+        <Route path="/employee" component={Employee} />
       </div>
     </Router>
   );

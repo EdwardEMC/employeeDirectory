@@ -10,6 +10,10 @@ class Directory extends Component {
     employees
   };
 
+  openEmployee = () => {
+    console.log("open");
+  }
+
   filterEmployee = event => {
     console.log(event.target.innerHTML);
     // const employees = this.state.employees.filter(employee => employee.id !== id);
@@ -40,6 +44,7 @@ class Directory extends Component {
         />
         {this.state.employees.map(employee => (
           <EmployeeCard
+            openEmployee={this.openEmployee}
             id={employee.id}
             key={employee.key}
             name={employee.name}

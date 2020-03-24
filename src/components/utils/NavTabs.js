@@ -18,6 +18,13 @@ function NavTabs() {
           Seach
         </Link>
       </li>
+      <li className="nav-item">
+        <Link
+          to="/employee"
+          className={location.pathname === "/employee" ? "nav-link active" : "nav-link"}>
+          Employee
+        </Link>
+      </li>
     </ul>
   );
 }
