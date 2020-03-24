@@ -1,23 +1,27 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import Individual from "../utils/Individual";
 import "./style.css";
 
-function IndividualCard(props) {
-  if(props.id) {
+function IndividualCard() {
+  const location = useLocation();
+  let person = Individual();
+  if(person[0]) {
     return (
       <div>
-        <span onClick={props.backToDirectory} className="back">
+        <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Back
-        </span>
+        </Link>
         <div>
-          <img alt={props.name} src={props.image} />
+          <img alt={person[0].name} src={person[0].image} />
         </div>
         <div>
           <div className="card-body">                        
-            <strong>Name:</strong> {props.name}         
-            <strong>Age:</strong> {props.age}
-            <strong>Email:</strong> {props.email}
-            <strong>Occupation:</strong> {props.occupation}
-            <strong>Location:</strong> {props.location}
+            <strong>Name:</strong> {person[0].name}         
+            <strong>Age:</strong> {person[0].age}
+            <strong>Email:</strong> {person[0].email}
+            <strong>Occupation:</strong> {person[0].occupation}
+            <strong>Location:</strong> {person[0].location}
           </div>
         </div>
       </div>

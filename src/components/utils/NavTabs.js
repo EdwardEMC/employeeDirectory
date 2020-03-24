@@ -18,13 +18,6 @@ function NavTabs() {
           Search
         </Link>
       </li>
-      <li className="nav-item">
-        <Link
-          to="/employee"
-          className={location.pathname.includes("/employee") ? "nav-link active" : "nav-link"}>
-          Employee
-        </Link>
-      </li>
     </ul>
   );
 }

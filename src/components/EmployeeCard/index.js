@@ -1,7 +1,10 @@
 import React from "react";
 import "./style.css";
+import { Link, useLocation } from "react-router-dom";
 
 function EmployeeCard(props) {
+  const location = useLocation();
+
   return (
     <div className="card mb-3">
       <div className="row no-gutters">
@@ -17,9 +20,11 @@ function EmployeeCard(props) {
             <strong>&emsp;Location:</strong> {props.location}
           </div>
         </div>
-        <span onClick={() => props.openEmployee(props.id)} className="explore">
-          Explore
-        </span>
+        <Link
+          to={"/employee/"+props.id}
+          className={location.pathname.includes("/employee") ? "nav-link active" : "nav-link"}>
+          Select
+        </Link>
       </div>
     </div>
   );
