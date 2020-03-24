@@ -2,8 +2,12 @@ import React from "react";
 import "./style.css";
 
 function IndividualCard(props) {
-  return (
-    <div>
+  if(props.id) {
+    return (
+      <div>
+        <span onClick={props.backToDirectory} className="back">
+          Back
+        </span>
         <div>
           <img alt={props.name} src={props.image} />
         </div>
@@ -16,11 +20,16 @@ function IndividualCard(props) {
             <strong>Location:</strong> {props.location}
           </div>
         </div>
-        {/* <span onClick={() => props.backToDirectory(props.id)} className="back">
-          Back
-        </span> */}
-    </div>
-  );
+      </div>
+    );
+  }
+  else {
+    return (
+      <div>
+        No Employee Selected
+      </div>
+    );
+  }
 }
 
 export default IndividualCard;
