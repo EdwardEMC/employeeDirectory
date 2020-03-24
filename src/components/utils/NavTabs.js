@@ -15,13 +15,13 @@ function NavTabs() {
         <Link
           to="/search"
           className={location.pathname === "/search" ? "nav-link active" : "nav-link"}>
-          Seach
+          Search
         </Link>
       </li>
       <li className="nav-item">
         <Link
           to="/employee"
-          className={location.pathname === "/employee" ? "nav-link active" : "nav-link"}>
+          className={location.pathname.includes("/employee") ? "nav-link active" : "nav-link"}>
           Employee
         </Link>
       </li>

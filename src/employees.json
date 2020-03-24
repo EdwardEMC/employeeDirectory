@@ -18,7 +18,7 @@
         "email": "kellie-Jdog@hotmail.com",
         "thumbnail": "",
         "image": "",
-        "occupation": "Business Analyst",
+        "occupation": "General Manager",
         "location": "Adelaide Office - Number 2"
     },
     {
@@ -85,7 +85,7 @@
         "thumbnail": "",
         "image": "",
         "occupation": "General Manager",
-        "location": "Adelaide Office - Number 4"
+        "location": "Melbourne Office - Number 4"
     },
     {
         "id": 9,
@@ -162,6 +162,17 @@
         "thumbnail": "",
         "image": "",
         "occupation": "Technician",
+        "location": "Adelaide Office - Supplies"
+    },
+    {
+        "id": 16,
+        "key": 16,
+        "name": "July Poashu",
+        "age": "41",
+        "email": "jpp@aol.com",
+        "thumbnail": "",
+        "image": "",
+        "occupation": "Business Analyst",
         "location": "Adelaide Office - Supplies"
     }
 ]

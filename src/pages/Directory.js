@@ -10,8 +10,8 @@ class Directory extends Component {
     employees
   };
 
-  openEmployee = () => {
-    console.log("open");
+  openEmployee = event => {
+    document.location = "/employee/" + event;
   }
 
   filterEmployee = event => {
