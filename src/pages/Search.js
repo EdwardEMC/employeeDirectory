@@ -19,7 +19,6 @@ class Search extends Component {
     };
 
     filerList = () => {
-        //do stuff to filter the list
         let new_list = [];
 
         employees.filter(employee => {
@@ -61,6 +60,7 @@ class Search extends Component {
                     </form>
                 {this.state.employees.map(employee => (
                     <EmployeeCard
+                        openEmployee={this.openEmployee}
                         id={employee.id}
                         key={employee.key}
                         name={employee.name}

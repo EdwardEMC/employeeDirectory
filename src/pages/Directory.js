@@ -15,9 +15,14 @@ class Directory extends Component {
   }
 
   filterEmployee = event => {
-    console.log(event.target.innerHTML);
-    // const employees = this.state.employees.filter(employee => employee.id !== id);
-    // this.setState({ employees });
+    if(event.target.value === "Location") {
+      const filter_list = employees.filter(employee => employee.location.includes(event.target.innerHTML));
+      this.setState({ employees:filter_list });
+    }
+    else {
+      const filter_list = employees.filter(employee => employee.occupation.includes(event.target.innerHTML));
+      this.setState({ employees:filter_list });
+    }
   };
 
   sortEmployee = event => {

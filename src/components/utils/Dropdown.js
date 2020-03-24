@@ -17,15 +17,24 @@ function Dropdown(props) {
                 </div>
             </div>
             <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Filter By
+                <button className="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Occupation
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button className="dropdown-item" onClick={props.filterEmployee}>Name</button>
-                    <button className="dropdown-item" onClick={props.filterEmployee}>Age</button>
-                    <button className="dropdown-item" onClick={props.filterEmployee}>Email</button>
-                    <button className="dropdown-item" onClick={props.filterEmployee}>Occupation</button>
-                    <button className="dropdown-item" onClick={props.filterEmployee}>Location</button>
+                    <button className="dropdown-item" onClick={props.filterEmployee} value="Occupation">CEO</button>
+                    <button className="dropdown-item" onClick={props.filterEmployee} value="Occupation">General Manager</button>
+                    <button className="dropdown-item" onClick={props.filterEmployee} value="Occupation">Team Manager</button>
+                    <button className="dropdown-item" onClick={props.filterEmployee} value="Occupation">Business Analyst</button>
+                    <button className="dropdown-item" onClick={props.filterEmployee} value="Occupation">Intern</button>
+                </div>
+            </div>
+            <div className="dropdown">
+                <button className="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Location
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button className="dropdown-item" onClick={props.filterEmployee} value="Location">Adelaide</button>
+                    <button className="dropdown-item" onClick={props.filterEmployee} value="Location">Melbourne</button>
                 </div>
             </div>
         </div>
