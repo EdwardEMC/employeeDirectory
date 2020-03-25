@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import EmployeeCard from "../components/EmployeeCard";
 import Wrapper from "../components/Wrapper";
+import Container from "../components/Container";
 import Title from "../components/Title";
 import employees from "../employees.json";
 import Dropdown from "../components/utils/Dropdown";
@@ -42,25 +43,27 @@ class Directory extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>Employee List</Title>
-        <Dropdown 
-          filterEmployee={this.filterEmployee}
-          sortEmployee={this.sortEmployee}
-        />
-        <br></br>
-        {this.state.employees.map(employee => (
-          <EmployeeCard
-            id={employee.id}
-            key={employee.key}
-            color={RandomColor()}
-            name={employee.name}
-            age={employee.age}
-            email={employee.email}
-            thumbnail={employee.thumbnail}
-            occupation={employee.occupation}
-            location={employee.location}
+        <Container>
+          <Title>Employee List</Title>
+          <Dropdown 
+            filterEmployee={this.filterEmployee}
+            sortEmployee={this.sortEmployee}
           />
-        ))}
+          <br></br>
+          {this.state.employees.map(employee => (
+            <EmployeeCard
+              id={employee.id}
+              key={employee.key}
+              color={RandomColor()}
+              name={employee.name}
+              age={employee.age}
+              email={employee.email}
+              thumbnail={employee.thumbnail}
+              occupation={employee.occupation}
+              location={employee.location}
+            />
+          ))}
+        </Container>
       </Wrapper>
     );
   }

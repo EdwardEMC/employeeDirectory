@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Directory from "./pages/Directory";
 import Search from "./pages/Search";
 import Employee from "./pages/Employee";
-import NavTabs from "./components/utils/NavTabs";
+import NavTabs from "./components/NavTabs";
 
 
 function App() {
