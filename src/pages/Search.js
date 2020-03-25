@@ -3,6 +3,7 @@ import EmployeeCard from "../components/EmployeeCard";
 import Wrapper from "../components/Wrapper";
 import Title from "../components/Title";
 import employees from "../employees.json";
+import RandomColor from "../components/utils/RandomColor";
 
 class Search extends Component {
     state = {
@@ -20,21 +21,21 @@ class Search extends Component {
 
     filerList = () => {
         let new_list = [];
-
+        
         employees.filter(employee => {
-            if(employee.name.includes(this.state.search)) {
+            if(employee.name.toLowerCase().includes(this.state.search)) {
                 new_list.push(employee);
             }
-            else if(employee.age.includes(this.state.search)) {
+            else if(employee.age.toLowerCase().includes(this.state.search)) {
                 new_list.push(employee);
             }
-            else if(employee.email.includes(this.state.search)) {
+            else if(employee.email.toLowerCase().includes(this.state.search)) {
                 new_list.push(employee);
             }
-            else if(employee.occupation.includes(this.state.search)) {
+            else if(employee.occupation.toLowerCase().includes(this.state.search)) {
                 new_list.push(employee);
             }
-            else if(employee.location.includes(this.state.search)) {
+            else if(employee.location.toLowerCase().includes(this.state.search)) {
                 new_list.push(employee);
             }
             return false;
@@ -49,20 +50,22 @@ class Search extends Component {
         return (
             <Wrapper>
                 <Title>Employee List</Title>
-                    <form className="form">
-                        <input
-                            value={this.state.search}
-                            name="SearchParam"
-                            onChange={this.handleInputChange}
-                            type="text"
-                            placeholder="Search..."
-                        />
-                    </form>
+                <form className="form d-flex justify-content-center">
+                    <input
+                        value={this.state.search}
+                        name="SearchParam"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Search..."
+                    />
+                </form>
+                <br></br>
                 {this.state.employees.map(employee => (
                     <EmployeeCard
                         openEmployee={this.openEmployee}
                         id={employee.id}
                         key={employee.key}
+                        color={RandomColor()}
                         name={employee.name}
                         age={employee.age}
                         email={employee.email}

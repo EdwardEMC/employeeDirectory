@@ -1,0 +1,18 @@
+.delete {
+    color: black;
+    margin: 0 auto;
+    display: table;
+}
+
+.back {
+    text-align: center;
+}
+
+.customLink {
+    display: inline;
+}
+
+.profile {
+    max-width: 80%;
+    max-height: 400px;
+}

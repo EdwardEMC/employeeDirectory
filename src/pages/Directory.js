@@ -5,20 +5,31 @@ import Title from "../components/Title";
 import employees from "../employees.json";
 import Dropdown from "../components/utils/Dropdown";
 import DynamicSort from "../components/utils/DynamicSort";
+import RandomColor from "../components/utils/RandomColor";
 
 class Directory extends Component {
   state = {
-    employees
+    employees:employees
   };
 
   filterEmployee = event => {
     if(event.target.value === "Location") {
-      const filter_list = employees.filter(employee => employee.location.includes(event.target.innerHTML));
-      this.setState({ employees:filter_list });
+      if(event.target.innerHTML!=="All") {
+        const filter_list = employees.filter(employee => employee.location.includes(event.target.innerHTML));
+        this.setState({ employees:filter_list });
+      }
+      else {
+        this.setState({ employees:employees });
+      }
     }
     else {
-      const filter_list = employees.filter(employee => employee.occupation.includes(event.target.innerHTML));
-      this.setState({ employees:filter_list });
+      if(event.target.innerHTML!=="All") {
+        const filter_list = employees.filter(employee => employee.occupation.includes(event.target.innerHTML));
+        this.setState({ employees:filter_list });
+      }
+      else {
+        this.setState({ employees:employees });
+      }
     }
   };
 
@@ -36,10 +47,12 @@ class Directory extends Component {
           filterEmployee={this.filterEmployee}
           sortEmployee={this.sortEmployee}
         />
+        <br></br>
         {this.state.employees.map(employee => (
           <EmployeeCard
             id={employee.id}
             key={employee.key}
+            color={RandomColor()}
             name={employee.name}
             age={employee.age}
             email={employee.email}
