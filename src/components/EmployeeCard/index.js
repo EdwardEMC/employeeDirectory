@@ -6,7 +6,7 @@ import Thumb from "../utils/Thumb";
 function EmployeeCard(props) {
   const location = useLocation();
   return (
-    <div className="card mb-3">
+    <div className="card mb-3 bg-light">
       <div className="row no-gutters">
         <div className="col-md-2 d-flex justify-content-center thumb-position">
           {Thumb(props.name, props.color)}
