@@ -16,6 +16,9 @@ Besides sorting and filtering a user navigate to the search page and search for 
 
 Selecting an employee from the list will bring up an individuals card, with their profile picture and non sensitive data.
 
+# Deployed
+https://assignment19userdirectory.herokuapp.com/
+
 # Built with
 Bootstrap/
 React.js/
